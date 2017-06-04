@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
 <title>Los' amoi!</title>
+<link rel="stylesheet" href="styles.css"/>
 <script src="app.js"></script>
 <h1>Los' amoi!</h1>
 
@@ -11,6 +12,22 @@
         <input type="file" id="audiofile" />
     </div>
 </fieldset>
+
+<fieldset id="audioControls">
+    <legend>Controls</legend>
+    <span class="control" data-keycode="88" data-desc="x">▶️</span>
+    <span class="control" data-keycode="67" data-desc="c">⏸</span>
+    <span class="control" data-keycode="86" data-desc="v">⏹</span>
+    <span class="control" data-keycode="37" data-desc="arrow left">⏪</span>
+    <span class="control" data-keycode="39" data-desc="arrow right">⏩</span>
+    <span class="control" data-keycode="40" data-desc="arrow down">🔉</span>
+    <span class="control" data-keycode="38" data-desc="arrow up">🔊</span>
+    <span class="control" data-keycode="173" data-desc="-">-</span>
+    <span class="control" data-keycode="171" data-desc="+">+</span>
+    <span class="control" data-keycode="66" data-desc="b">♥</span>
+    <span class="control" data-keycode="76" data-desc="l">🔁</span>
+</fieldset>
+
 
 <ul>
     <li>Volume: <output id="volume">1.00</output><br/>

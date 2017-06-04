@@ -7,12 +7,13 @@
 /* eslint-env browser */
 
 window.addEventListener('load', function () {
-    var audio, nodes, values, output, player;
+    var audio, nodes, values, output, player, clickAudioControl;
     audio = document.querySelector('audio');
     nodes = {
         selectAudioFile : document.querySelector('#audiofile'),
         beatsMinus : document.querySelector('#beatsMinus'),
         beatsPlus : document.querySelector('#beatsPlus'),
+        audioControls : document.querySelector('#audioControls'),
     };
     values = {
         lastBeatTime : null
@@ -133,7 +134,7 @@ window.addEventListener('load', function () {
     };
 
     // implement (some) winamp shortcuts, see https://shortcutworld.com/en/Winamp/win/all
-    document.onkeydown = function (evt) {
+    document.onkeydown = clickAudioControl = function (evt) {
         if (evt.keyCode === 88) {
             // x -> play
             player.play();
@@ -182,4 +183,20 @@ window.addEventListener('load', function () {
              //console.log("pressed key:", evt.keyCode);
         }
     };
+
+    // map clicks on audio controls to keyboard shortcut events
+    nodes.audioControls.onclick = nodes.audioControls.ondblclick = function (evt) {
+        if (evt.type === 'click') {
+            clickAudioControl({
+                keyCode : parseInt(evt.target.getAttribute("data-keycode"))
+            })
+        } else {
+            // map doubleclick to shiftKey
+            clickAudioControl({
+                keyCode : parseInt(evt.target.getAttribute("data-keycode")),
+                shiftKey : true
+            })
+        }
+    };
+
 }, false);

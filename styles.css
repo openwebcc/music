@@ -1,0 +1,10 @@
+/* stylesheet for Los' amoi! application */
+
+.control {
+    cursor: pointer;
+    display: inline-block;
+    width: 1.2em;
+    font-size: 3em;
+    text-align: center;
+    border: 1px solid silver;
+}
