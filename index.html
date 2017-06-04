@@ -18,12 +18,13 @@
     <span class="control" data-keycode="88" data-desc="x">▶️</span>
     <span class="control" data-keycode="67" data-desc="c">⏸</span>
     <span class="control" data-keycode="86" data-desc="v">⏹</span>
-    <span class="control" data-keycode="37" data-desc="arrow left">⏪</span>
-    <span class="control" data-keycode="39" data-desc="arrow right">⏩</span>
-    <span class="control" data-keycode="40" data-desc="arrow down">🔉</span>
-    <span class="control" data-keycode="38" data-desc="arrow up">🔊</span>
-    <span class="control" data-keycode="173" data-desc="-">-</span>
-    <span class="control" data-keycode="171" data-desc="+">+</span>
+    <span class="control" data-keycode="37" data-desc="arrow left">⬅</span>
+    <span class="control" data-keycode="39" data-desc="arrow right">➡</span>
+    <span class="control" data-keycode="40" data-desc="arrow down">⬇</span>
+    <span class="control" data-keycode="38" data-desc="arrow up">⬆</span>
+    <span class="control" data-keycode="173" data-desc="-"><strong>-</strong></span>
+    <span class="control" data-keycode="171" data-desc="+"><strong>+</strong></span>
+    <span class="control" data-keycode="163" data-desc="#">#</span>
     <span class="control" data-keycode="66" data-desc="b">♥</span>
     <span class="control" data-keycode="76" data-desc="l">🔁</span>
 </fieldset>
@@ -37,13 +38,13 @@
         <em>press <span class="key">+</span> to increase, <span class="key">-</span> to decrease, <span class="key">#</span> to reset</em>
     </li>
     <li>Beats: <output id="beat"></output><br/>
-        <em>press <span class="key">b</span> a couple of times to record the beat, press <span class="key">B</span> to reset beat</em><br/>
+        <em>press <span class="key">b</span> or the heart symbol a couple of times to record the beat, press <span class="key">B</span> or doubleclick the heart symbol to reset the beat</em><br/>
         <div style="display:none;">
-        press <span class="key">←</span> to rewind, press <span class="key">→</span> to forward by beats, number of beats <input id="beatsMinus" type="button" value="-" /><input id="beatsBack" type="button" value="8"/><input id="beatsPlus" type="button" value="+" />
+        press <span class="key">←</span> to rewind, press <span class="key">→</span> to forward by beats. Number of beats <input id="beatsMinus" type="button" value="-" /><input id="beatsBack" type="button" value="8"/><input id="beatsPlus" type="button" value="+" />
         </div>
     </li>
     <li>Loop: <output id="loopFrom"></output> - <output id="loopTo"></output><br/>
-        <em>press <span class="key">l</span> twice to set start- and endtime of loop, press <span class="key">L</span> to reset loop</em>
+        <em>press <span class="key">l</span> or the loop symbol twice to set start- and endtime of loop, press <span class="key">L</span> or doubleclick the loop symbol to reset the loop</em>
     </li>
 </ul>
 
@@ -55,7 +56,7 @@
     <li>arrow left : rewind 5 seconds</li>
     <li>arrow right : forward 5 seconds</li>
     <li>arrow up : volume up by 0.05</li>
-    <li>arrow down : volume down by 0.0</li>
+    <li>arrow down : volume down by 0.05</li>
     <li>+ : increase playbackrate by 0.05</li>
     <li>- : decrease playbackrate by 0.05</li>
     <li># : reset playbackrate</li>
