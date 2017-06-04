@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>Los' amoi!</title>
+<script src="app.js"></script>
+<h1>Los' amoi!</h1>
+
+<fieldset style="vertical-align: middle">
+    <legend>Audio</legend>
+    <audio controls tabindex="-1"></audio>
+    <div>
+        <input type="file" id="audiofile" />
+    </div>
+</fieldset>
+
+<ul>
+    <li>Volume: <output id="volume">1.00</output><br/>
+        <em>press <span class="key">↑</span> to increase, <span class="key">↓</span> to decrease</em>
+    </li>
+    <li>Playbackrate: <output id="playbackrate">1.00</output><br/>
+        <em>press <span class="key">+</span> to increase, <span class="key">-</span> to decrease, <span class="key">#</span> to reset</em>
+    </li>
+    <li>Beats: <output id="beat"></output><br/>
+        <em>press <span class="key">b</span> a couple of times to record the beat, press <span class="key">B</span> to reset beat</em><br/>
+        <div style="display:none;">
+        press <span class="key">←</span> to rewind, press <span class="key">→</span> to forward by beats, number of beats <input id="beatsMinus" type="button" value="-" /><input id="beatsBack" type="button" value="8"/><input id="beatsPlus" type="button" value="+" />
+        </div>
+    </li>
+    <li>Loop: <output id="loopFrom"></output> - <output id="loopTo"></output><br/>
+        <em>press <span class="key">l</span> twice to set start- and endtime of loop, press <span class="key">L</span> to reset loop</em>
+    </li>
+</ul>
+
+<h3>keyboard shortcuts</h3>
+<ul>
+    <li>x : start</li>
+    <li>v : stop</li>
+    <li>c : pause / unpause</li>
+    <li>arrow left : rewind 5 seconds</li>
+    <li>arrow right : forward 5 seconds</li>
+    <li>arrow up : volume up by 0.05</li>
+    <li>arrow down : volume down by 0.0</li>
+    <li>+ : increase playbackrate by 0.05</li>
+    <li>- : decrease playbackrate by 0.05</li>
+    <li># : reset playbackrate</li>
+    <li>b : set tempo of beat by pressing b to the beat</li>
+    <li>B : reset tempo of beat</li>
+    <li>l : set start- and endtime of loop</li>
+    <li>L : reset looping</li>
+</ul>
