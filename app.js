@@ -192,6 +192,10 @@ window.addEventListener('load', function () {
     }
 
     // set number of beats to go back / forward with arrows once beat is set
+    output.beatsBack.onclick = function () {
+        var beats = prompt("Set number of beats",output.beatsBack.value);
+        output.beatsBack.value = parseInt(beats);
+    };
     nodes.beatsMinus.onclick = function () {
         output.beatsBack.value = parseInt(output.beatsBack.value) - 1;
         if (output.beatsBack.value < 1) {
