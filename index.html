@@ -13,12 +13,12 @@
         <input type="file" id="audiofile" />
     </div>
     <div class="audioControl">
-        <span id="playpause" class="button">▶️</span>
-        <input id="timeline" type="range" start="0" end="100" value="0" />
+        <span id="playpause" class="button" title="play/pause (Keyboard shortcuts: x=start, v=stop, c=pause/unpause)">▶️</span>
+        <input id="timeline" type="range" start="0" end="100" value="0" title="timeline (Keyboard shortcuts: arrow left=rewind 5s, arrow-right=forward 5s)"/>
         <output id="elapsed" class="active">0:00</output>
         <output id="duration" class="inactive"> / 0:00</output>
         <span id="mute" class="button">🔊</span>
-        <input id="volume" type="range" start="0" end="100" value="100" />
+        <input id="volume" type="range" start="0" end="100" value="100" title="volume (Keyboard shortcuts: arrow up=volume up by 0.05, arrow-down=volume down by 0.05)"/>
     </div>
 </fieldset>
 
@@ -27,29 +27,29 @@
     <div id="toolControls">
         <fieldset class="tool">
             <legend>Fwd / Bwd</legend>
-            <span class="control" data-keycode="37" data-desc="arrow left" title="go back">⬅</span>
-            <span class="control" data-keycode="39" data-desc="arrow right" title="go forward">➡</span>
+            <span class="control" data-keycode="37" data-desc="arrow left" title="go back 5s (Keyboard shortcut: arrow left)">⬅</span>
+            <span class="control" data-keycode="39" data-desc="arrow right" title="forward 5s (Keyboard shortcut: arrow-right)">➡</span>
         </fieldset>
         <fieldset class="tool">
             <legend>Tempo <output id="playbackrate">1.00</output></legend>
-            <strong><span class="control" data-keycode="173" data-desc="-" title="play slower">-</span></strong>
-            <strong><span class="control" data-keycode="171" data-desc="+" title="play faster">+</span></strong>
-            <span class="control" data-keycode="163" data-desc="#" title="reset tempo">#</span>
+            <strong><span class="control" data-keycode="173" data-desc="-" title="play slower (Keyboard shortcut: -)">-</span></strong>
+            <strong><span class="control" data-keycode="171" data-desc="+" title="play faster (Keyboard shortcut: +)">+</span></strong>
+            <span class="control" data-keycode="163" data-desc="#" title="reset tempo (Keyboard shortcut: #)">#</span>
         </fieldset>
         <fieldset class="tool">
             <legend>Loop</legend>
-            <span class="control" data-keycode="76" data-desc="l" title="loop">🔁</span>
+            <span class="control" data-keycode="76" data-desc="l" title="loop (Keyboard shortcut: press l to set start/end of loop, press L to reset loop)">🔁</span>
             <output id="loopFrom"></output> <output id="loopTo"></output>
         </fieldset>
         <fieldset class="tool">
             <legend>Beat <output id="beat"></output></legend>
-            <span class="control" data-keycode="66" data-desc="b" title="set tempo">♥</span>
+            <span class="control" data-keycode="66" data-desc="b" title="set tempo (Keyboard shortcut: press b to to the beat to set tempo, press B to reset tempo)">♥</span>
         </fieldset>
         <fieldset class="tool" style="display:none">
             <legend>Beats back / forward</legend>
-            <span id="beatsMinus" class="control">-</span>
+            <span id="beatsMinus" class="control" title="decrease number of beats to go back/forward">-</span>
             <output id="beatsBack" class="control">8</output>
-            <span id="beatsPlus" class="control">+</span>
+            <span id="beatsPlus" class="control" title="increase number of beats to go back/forward">+</span>
         </fieldset>
     </div>
 </fieldset>
