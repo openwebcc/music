@@ -242,8 +242,12 @@ window.addEventListener('load', function () {
             } else {
                 player.clearLoop();
             }
+        } else if (evt.keyCode === 77) {
+            // mute / unmute
+            audio.muted = (audio.muted === true) ? false : true;
+            util.setVolumeIcon();
         } else {
-             //console.log("pressed key:", evt.keyCode);
+             console.log("pressed key:", evt.keyCode);
         }
     };
 
