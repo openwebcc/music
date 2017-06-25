@@ -1,6 +1,6 @@
 /*
  * 
- * Los' amoi! Javascript library
+ * Los amoi! Javascript library
  * 
  */
 

@@ -1,4 +1,4 @@
-# Los' amoi!
+# Los amoi!
 
 This application provides easy navigation tasks to load, start, stop, rewind or loop audiofiles while transcribing music. You can control all tasks using the mouse, keyboard shortcuts or touch events.
 
