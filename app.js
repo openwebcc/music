@@ -247,7 +247,7 @@ window.addEventListener('load', function () {
             audio.muted = (audio.muted === true) ? false : true;
             util.setVolumeIcon();
         } else {
-             console.log("pressed key:", evt.keyCode);
+             //console.log("pressed key:", evt.keyCode);
         }
     };
 
