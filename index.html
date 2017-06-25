@@ -6,63 +6,71 @@
 <script src="app.js"></script>
 <h1>Los' amoi!</h1>
 
-<fieldset style="vertical-align: middle">
-    <legend>Audio</legend>
-    <audio controls tabindex="-1"></audio>
-    <div>
+<fieldset>
+    <legend>Audio control</legend>
+    <div class="fileControl">
+        <audio></audio>
         <input type="file" id="audiofile" />
+    </div>
+    <div class="audioControl">
+        <span id="playpause" class="button">▶️</span>
+        <input id="timeline" type="range" start="0" end="100" value="0" />
+        <output id="elapsed" class="active">0:00</output>
+        <output id="duration" class="inactive"> / 0:00</output>
+        <span id="mute" class="button">🔊</span>
+        <input id="volume" type="range" start="0" end="100" value="100" />
     </div>
 </fieldset>
 
-<fieldset id="audioControls">
-    <legend>Controls</legend>
-    <span class="control" data-keycode="88" data-desc="x">▶️</span>
-    <span class="control" data-keycode="67" data-desc="c">⏸</span>
-    <span class="control" data-keycode="86" data-desc="v">⏹</span>
-    <span class="control" data-keycode="37" data-desc="arrow left">⬅</span>
-    <span class="control" data-keycode="39" data-desc="arrow right">➡</span>
-    <span class="control" data-keycode="40" data-desc="arrow down">⬇</span>
-    <span class="control" data-keycode="38" data-desc="arrow up">⬆</span>
-    <span class="control" data-keycode="173" data-desc="-"><strong>-</strong></span>
-    <span class="control" data-keycode="171" data-desc="+"><strong>+</strong></span>
-    <span class="control" data-keycode="163" data-desc="#">#</span>
-    <span class="control" data-keycode="66" data-desc="b">♥</span>
-    <span class="control" data-keycode="76" data-desc="l">🔁</span>
+<fieldset>
+    <legend>Toolbox</legend>
+    <div id="toolControls">
+        <fieldset class="tool">
+            <legend>Fwd / Bwd</legend>
+            <span class="control" data-keycode="37" data-desc="arrow left" title="go back">⬅</span>
+            <span class="control" data-keycode="39" data-desc="arrow right" title="go forward">➡</span>
+        </fieldset>
+        <fieldset class="tool">
+            <legend>Tempo <output id="playbackrate">1.00</output></legend>
+            <strong><span class="control" data-keycode="173" data-desc="-" title="play slower">-</span></strong>
+            <strong><span class="control" data-keycode="171" data-desc="+" title="play faster">+</span></strong>
+            <span class="control" data-keycode="163" data-desc="#" title="reset tempo">#</span>
+        </fieldset>
+        <fieldset class="tool">
+            <legend>Loop</legend>
+            <span class="control" data-keycode="76" data-desc="l" title="loop">🔁</span>
+            <output id="loopFrom"></output> <output id="loopTo"></output>
+        </fieldset>
+        <fieldset class="tool">
+            <legend>Beat <output id="beat"></output></legend>
+            <span class="control" data-keycode="66" data-desc="b" title="set tempo">♥</span>
+        </fieldset>
+        <fieldset class="tool" style="display:none">
+            <legend>Beats back / forward</legend>
+            <span id="beatsMinus" class="control">-</span>
+            <output id="beatsBack" class="control">8</output>
+            <span id="beatsPlus" class="control">+</span>
+        </fieldset>
+    </div>
 </fieldset>
 
+<fieldset>
+    <legend>Keyboard shortcuts</legend>
+    <table>
+        <tr><td>x</td><td>start</td></tr>
+        <tr><td>v</td><td>stop</td></tr>
+        <tr><td>c</td><td>pause / unpause</td></tr>
+        <tr><td>arrow left</td><td>rewind 5 seconds</td></tr>
+        <tr><td>arrow right</td><td>forward 5 seconds</td></tr>
+        <tr><td>arrow up</td><td>volume up by 0.05</td></tr>
+        <tr><td>arrow down</td><td>volume down by 0.05</td></tr>
+        <tr><td>+</td><td>increase playbackrate by 0.05</td></tr>
+        <tr><td>-</td><td>decrease playbackrate by 0.05</td></tr>
+        <tr><td>#</td><td>reset playbackrate</td></tr>
+        <tr><td>b</td><td>set tempo of beat by pressing b to the beat</td></tr>
+        <tr><td>B</td><td>reset tempo of beat</td></tr>
+        <tr><td>l</td><td>set start- and endtime of loop</td></tr>
+        <tr><td>L</td><td>reset looping</td></tr>
+    </table>
 
-<ul>
-    <li>Volume: <output id="volume">1.00</output><br/>
-        <em>press <span class="key">↑</span> to increase, <span class="key">↓</span> to decrease</em>
-    </li>
-    <li>Playbackrate: <output id="playbackrate">1.00</output><br/>
-        <em>press <span class="key">+</span> to increase, <span class="key">-</span> to decrease, <span class="key">#</span> to reset</em>
-    </li>
-    <li>Beats: <output id="beat"></output><br/>
-        <em>press <span class="key">b</span> or the heart symbol a couple of times to record the beat, press <span class="key">B</span> or doubleclick the heart symbol to reset the beat</em><br/>
-        <div style="display:none;">
-        press <span class="key">←</span> to rewind, press <span class="key">→</span> to forward by beats. Number of beats <input id="beatsMinus" type="button" value="-" /><input id="beatsBack" type="button" value="8"/><input id="beatsPlus" type="button" value="+" />
-        </div>
-    </li>
-    <li>Loop: <output id="loopFrom"></output> - <output id="loopTo"></output><br/>
-        <em>press <span class="key">l</span> or the loop symbol twice to set start- and endtime of loop, press <span class="key">L</span> or doubleclick the loop symbol to reset the loop</em>
-    </li>
-</ul>
-
-<h3>keyboard shortcuts</h3>
-<ul>
-    <li>x : start</li>
-    <li>v : stop</li>
-    <li>c : pause / unpause</li>
-    <li>arrow left : rewind 5 seconds</li>
-    <li>arrow right : forward 5 seconds</li>
-    <li>arrow up : volume up by 0.05</li>
-    <li>arrow down : volume down by 0.05</li>
-    <li>+ : increase playbackrate by 0.05</li>
-    <li>- : decrease playbackrate by 0.05</li>
-    <li># : reset playbackrate</li>
-    <li>b : set tempo of beat by pressing b to the beat</li>
-    <li>B : reset tempo of beat</li>
-    <li>l : set start- and endtime of loop</li>
-    <li>L : reset looping</li>
-</ul>
+</fieldset>

@@ -1,6 +1,24 @@
 /* stylesheet for Los' amoi! application */
 
-.control {
+body {
+    background-color: #333;
+    color: #eee;
+    font-size: 1.5em;
+}
+fieldset {
+    margin-top: 0.5em;
+}
+.fileControl {
+    padding: 0.5em;
+}
+.fileControl input {
+    font-size: 1em;
+    padding-bottom: 1em;
+}
+.audioControl output {
+    font-size: 1.5em;
+}
+.control  {
     cursor: pointer;
     display: inline-block;
     width: 1.2em;
@@ -8,4 +26,23 @@
     text-align: center;
     box-sizing: border-box;
     border: 1px solid silver;
+}
+
+.button {
+    display: inline-block;
+    cursor: pointer;
+    color: white;
+    width: 1.2em;
+    font-size: 3em;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.inactive {
+    color: #aaa;
+    pointer-events: none;
+}
+
+.tool {
+    display: inline-block;
 }
