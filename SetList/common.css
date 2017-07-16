@@ -35,9 +35,15 @@
     border: 1px dashed;
 }
 
+a:link, a:visited {
+    color: blue;
+}
 
 @media print {
     .no-print {
         display: none !important;
+    }
+    a:link, a:visited {
+        color: black;
     }
 }

@@ -43,7 +43,13 @@ window.onload = function () {
                     markup.push(" <span class='instrument'>" + obj.instrument + "</span>");
                 }
                 if (obj.sheet) {
-                    markup.push(" <span class='sheet'>Sheet</span>");
+                    if (obj.sheet === "1") {
+                        markup.push(" <span class='sheet'>Sheet</span>");
+                    } else if (obj.sheet.substr(0,4) === "http") {
+                        markup.push(" <span class='sheet'><a href='" + obj.sheet + "'>Sheet</a></span>");
+                    } else {
+                        markup.push(" <span class='sheet'><a href='sheets/" + obj.sheet + "'>Sheet</a></span>");
+                    }
                 }
                 markup.push("</p>");
                 if (obj.remark) {
