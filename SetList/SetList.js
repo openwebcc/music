@@ -29,10 +29,6 @@ window.onload = function () {
                 }
 
                 // format entry
-                // SORT	SONG	CLEF	INSTRUMENT	CHORDS	REMARK	SHEET	OPTIONAL
-
-                // prepare marking of optional entries
-
                 markup = [];
                 markup.push("<div class='entry " + optional + "'>");
                 markup.push("<p class='song'>" + obj.sort + ".&nbsp;" + obj.song);
