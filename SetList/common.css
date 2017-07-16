@@ -1,0 +1,43 @@
+/* main Stylesheet for SetList application */
+
+#inputData, #inputSubmit {
+    margin-top: 0.6em;
+}
+
+.entry {
+    width: 90%;
+    border: 1px solid silver;
+    padding: 0.3em;
+    margin-bottom: 0.3em;
+    page-break-inside: avoid;
+}
+.song {
+    font-weight: bold;
+}
+.instrument, .sheet {
+    font-family: sans-serif;
+    padding: 0.3em;
+    border: 1px solid #333;
+    border-radius: 0.5em;
+}
+.remark {
+    font-style: italic;
+}
+.chords {
+    font-size: 1.5em;
+}
+
+/* optional songs */
+#outMore {
+    page-break-before: always;
+}
+#outMore .entry {
+    border: 1px dashed;
+}
+
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+}
