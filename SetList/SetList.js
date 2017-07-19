@@ -28,6 +28,11 @@ window.onload = function () {
                     obj[header[j].toLowerCase()] = row[j]
                 }
 
+                // skip unassigned songs indicated by sort=999
+                if (obj.sort === "999") {
+                    continue;
+                }
+
                 // format entry
                 markup = [];
                 markup.push("<div class='entry " + optional + "'>");
