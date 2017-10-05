@@ -55,6 +55,7 @@ window.onload = function () {
                 markup.push("</p>");
                 if (obj.remark) {
                     obj.remark = obj.remark.replace(/ *# */g,'<br/>');
+                    obj.remark = obj.remark.replace(/img:(\w+).png/g,'<img src=images/$1.png alt=$1.png/>');
                     markup.push("<p class='remark'>" + obj.remark + "</p>");
                 }
                 if (obj.chords) {
