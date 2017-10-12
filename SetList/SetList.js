@@ -82,6 +82,10 @@ window.onload = function () {
     };
     //
     elem.inputSubmit.onclick = function () {
+        // reset program if any
+        elem.outProgram.innerHTML = "";
+        elem.outMore.innerHTML = "";
+
         // set title and heading
         elem.pageTitle.innerHTML = elem.inputTitle.value;
         elem.outTitle.innerHTML = elem.inputTitle.value;
