@@ -59,6 +59,7 @@ window.onload = function () {
                     markup.push("<p class='remark'>" + obj.remark + "</p>");
                 }
                 if (obj.chords) {
+                    obj.chords = obj.chords.replace(/ *# */g,'<br/>');
                     markup.push("<pre class='chords'>" + obj.chords + "</pre>");
                 }
 
