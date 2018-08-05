@@ -36,12 +36,16 @@ window.onload = function () {
                 // format entry
                 markup = [];
                 markup.push("<div class='entry " + optional + "'>");
-                markup.push("<p class='song'>" + obj.sort + ".&nbsp;" + obj.song);
+                markup.push("<p class='song'>" + (obj.sort ? obj.sort + ".&nbsp;" : "") + obj.song);
                 if (obj.clef) {
                     markup.push(" (" + obj.clef + ")");
                 }
                 if (obj.instrument) {
-                    markup.push(" <span class='instrument'>" + obj.instrument + "</span>");
+                    insts = obj.instrument.split(";");
+                    for (j = 0; j < insts.length; j += 1) {
+                        insts[j] = insts[j].replace(" ","&nbsp;");
+                        markup.push(" <span class='instrument'>" + insts[j] + "</span>");
+                    }
                 }
                 if (obj.sheet) {
                     if (obj.sheet === "1") {
@@ -60,7 +64,7 @@ window.onload = function () {
                 }
                 if (obj.chords) {
                     obj.chords = obj.chords.replace(/ *\\n */g,'<br/>');
-                    markup.push("<pre class='chords'>" + obj.chords + "</pre>");
+                    markup.push("<code class='chords'>" + obj.chords + "</code>");
                 }
 
                 markup.push("</p>");

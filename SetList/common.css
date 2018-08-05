@@ -1,11 +1,13 @@
 /* main Stylesheet for SetList application */
 
+body {
+    font-size: 2em;
+}
 #inputData, #inputSubmit {
     margin-top: 0.6em;
 }
 
 .entry {
-    width: 90%;
     border: 1px solid silver;
     padding: 0.3em;
     margin-bottom: 0.3em;
@@ -16,9 +18,9 @@
 }
 .instrument, .sheet {
     font-family: sans-serif;
-    padding: 0.3em;
+    padding: 0.1em;
     border: 1px solid #333;
-    border-radius: 0.5em;
+    border-radius: 0.25em;
 }
 .remark {
     font-style: italic;
