@@ -47,19 +47,22 @@ window.onload = function () {
                         markup.push(" <span class='instrument'>" + insts[j] + "</span>");
                     }
                 }
+                optional_inline_image = null;
                 if (obj.sheet) {
                     if (obj.sheet === "1") {
                         markup.push(" <span class='sheet'>Sheet</span>");
                     } else if (obj.sheet.substr(0,4) === "http") {
                         markup.push(" <span class='sheet'><a href='" + obj.sheet + "'>Sheet</a></span>");
-                    } else {
+                    } else if (obj.sheet.substr(0,6) === "inline") {
+                        optional_inline_image = '<br/><img src=sheets/' + obj.sheet + ' alt=' + obj.sheet + '/>'
+                    }
+                    else {
                         markup.push(" <span class='sheet'><a href='sheets/" + obj.sheet + "'>Sheet</a></span>");
                     }
                 }
                 markup.push("</p>");
                 if (obj.remark) {
                     obj.remark = obj.remark.replace(/ *\\n */g,'<br/>');
-                    obj.remark = obj.remark.replace(/img:(\w+).png/g,'<img src=sheets/$1.png alt=$1.png/>');
                     markup.push("<p class='remark'>" + obj.remark + "</p>");
                 }
                 if (obj.chords) {
@@ -67,6 +70,10 @@ window.onload = function () {
                     markup.push("<code class='chords'>" + obj.chords + "</code>");
                 }
 
+                // add optional inline image parsed in sheet column if any
+                if (optional_inline_image) {
+                    markup.push(optional_inline_image)
+                }
                 markup.push("</p>");
                 markup.push("</div>");
 
