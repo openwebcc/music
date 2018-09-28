@@ -1,7 +1,7 @@
 /* main Stylesheet for SetList application */
 
 body {
-    font-size: 2em;
+    font-size: 3em;
 }
 #inputData, #inputSubmit {
     margin-top: 0.6em;
@@ -26,6 +26,11 @@ body {
     font-style: italic;
 }
 .chords {
+    font-size: 1.5em;
+}
+
+/* header */
+#outTitle {
     font-size: 1.5em;
 }
 
