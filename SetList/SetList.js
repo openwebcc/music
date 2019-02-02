@@ -5,6 +5,7 @@ window.onload = function () {
         inputData : document.querySelector("#inputData"),
         inputSubmit : document.querySelector("#inputSubmit"),
         inputTitle : document.querySelector("#inputTitle"),
+        inputSheetPath : document.querySelector("#inputSheetPath"),
         pageTitle : document.querySelector("#pageTitle"),
         outTitle : document.querySelector("#outTitle"),
         outProgram : document.querySelector("#outProgram"),
@@ -54,7 +55,7 @@ window.onload = function () {
                     } else if (obj.sheet.substr(0,4) === "http") {
                         markup.push(" <span class='sheet'><a href='" + obj.sheet + "'>Sheet</a></span>");
                     } else if (obj.sheet.substr(0,6) === "inline") {
-                        optional_inline_image = '<br/><img src=sheets/' + obj.sheet + ' alt=' + obj.sheet + '/>'
+                        optional_inline_image = '<br/><img src=' + elem.inputSheetPath.value + '/' + obj.sheet + ' alt=' + obj.sheet + '/>'
                     }
                     else {
                         markup.push(" <span class='sheet'><a href='sheets/" + obj.sheet + "'>Sheet</a></span>");
